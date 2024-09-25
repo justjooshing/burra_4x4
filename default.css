@@ -251,6 +251,11 @@ a {
   line-height: 22px;
 }
 
+.thankyou_text > span {
+  font-size: 24px;
+  text-decoration: underline;
+}
+
 .logos {
   position: absolute;
   left: 60px;

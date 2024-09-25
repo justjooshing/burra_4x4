@@ -129,6 +129,10 @@
               <input placeholder="Email address" id='customer_email' name='customer_email' type="email" />
               <label for="comments">Additional Comments:</label>
               <textarea id="comments" name="comments" rows='6'></textarea>
+
+              <!-- Honeypot for botspam -->
+              <label for="honeypot" style="display: none;">Leave this field empty:</label>
+              <input type="text" id="honeypot" name="honeypot" style="display: none;">
             </div>
             <button form="contact_us_form" class="contact_window_submit">Submit</button>
           </form>
@@ -138,7 +142,7 @@
       <!-- Thank you modal -->
       <aside id="thankyou" class="thankyou hidden">
         <div class="thankyou_text">
-          <div style="font-size: 24px; text-decoration: underline;">Thankyou</div>
+          <span>Thankyou</span>
           <br />
           We will respond to your enquiry as soon as we can.<br />
           <br />

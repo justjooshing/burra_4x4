@@ -45,12 +45,20 @@ Object.entries(elementTriggerMap).forEach(([id, elements]) => {
 const contactUsForm = document.getElementById("contact_us_form");
 
 contactUsForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  toggleElementVisibility("thankyou");
+  const honeypot = document.getElementById("honeypot").value;
+  // Check if the honeypot field is empty
+  if (honeypot) {
+    // Honeypot filled; prevent form submission
+    e.preventDefault();
+    alert("Spam detected! Your submission cannot be processed.");
+  } else {
+    e.preventDefault();
+    toggleElementVisibility("thankyou");
 
-  const formData = new FormData(e.target);
-  // Send somewhere
-  console.log(Array.from(formData.entries()));
+    const formData = new FormData(e.target);
+    // Send somewhere
+    console.log(Array.from(formData.entries()));
 
-  contactUsForm.reset();
+    contactUsForm.reset();
+  }
 });
