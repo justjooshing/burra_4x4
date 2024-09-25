@@ -6,7 +6,10 @@ const elementTriggerMap = {
     { element: "contact_window" },
     { element: "map_window", directive: "hide" },
   ],
-  contact_close_button: [{ element: "contact_window" }],
+  contact_close_button: [
+    { element: "contact_window" },
+    { element: "thankyou", directive: "hide" },
+  ],
   thankyou_close_button: [
     { element: "thankyou" },
     { element: "contact_window" },
@@ -39,10 +42,15 @@ Object.entries(elementTriggerMap).forEach(([id, elements]) => {
   });
 });
 
-document.getElementById("contact_us_form").addEventListener("submit", (e) => {
+const contactUsForm = document.getElementById("contact_us_form");
+
+contactUsForm.addEventListener("submit", (e) => {
   e.preventDefault();
   toggleElementVisibility("thankyou");
 
   const formData = new FormData(e.target);
+  // Send somewhere
   console.log(Array.from(formData.entries()));
+
+  contactUsForm.reset();
 });

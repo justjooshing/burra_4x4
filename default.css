@@ -198,14 +198,14 @@ a {
 .contact_window_inner > form {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
+  padding: 20px 0px;
   align-items: center;
 }
 
 .contact_window_inner > form > div {
   display: grid;
   grid-template-columns: 30% 50%;
-  gap: 4px;
+  gap: 6px;
 }
 
 .contact_window_inner > form > div > label {
@@ -215,6 +215,7 @@ a {
 
 .contact_window_close {
   position: absolute;
+  z-index: 3;
   left: 430px;
   top: 15px;
   width: 40px;
@@ -225,6 +226,7 @@ a {
 
 .contact_window_submit {
   all: revert;
+  margin-top: 8px;
 }
 
 .thankyou {

@@ -104,6 +104,8 @@
       </button>
 
       <aside id='contact_window' class="contact_window hidden">
+        <button type="button" id="contact_close_button" class='contact_window_close'>
+        </button>
         <div class='contact_window_inner'>
           <span>Contact Us</span>
           <form id="contact_us_form">
@@ -121,17 +123,16 @@
               <input placeholder="Make/model/year" id='make' name='make' />
               <label for="customer_name">Name:</label>
               <input name='customer_name' id="customer_name" required />
-              <label for="customer_contact">Contact Details:</label>
-              <input placeholder="Phone/email" id='customer_contact' name='customer_contact' required />
+              <label for="customer_phone">Phone:</label>
+              <input placeholder="Phone number" id='customer_phone' name='customer_phone' required type="number" />
+              <label for="customer_email">Email:</label>
+              <input placeholder="Email address" id='customer_email' name='customer_email' type="email" />
               <label for="comments">Additional Comments:</label>
               <textarea id="comments" name="comments" rows='6'></textarea>
             </div>
-            <button class="contact_window_submit">Submit</button>
+            <button form="contact_us_form" class="contact_window_submit">Submit</button>
           </form>
         </div>
-
-        <button id="contact_close_button" class='contact_window_close' form="contact_us_form">
-        </button>
       </aside>
 
       <!-- Thank you modal -->
