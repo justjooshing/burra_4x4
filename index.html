@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Mechanic Korumburra - Burra Car & 4 X 4</title>
+
+  <!-- SEO -->
+  <meta name="description"
+    content="Burra Car & 4 X 4. We provide servicing and repairs on all vehicle makes and models. Call us on (03) 5655 1288." />
+  <meta name="keywords"
+    content="burra, car, 4 x 4, mechanic, josh, grant, vehicle, service, repair, all models, brake, clutch, a/c, disc, machining, modification, towing, trailers, auto electrical, quality oil, filters, korumburra, victoria, south gippsland, racv" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (OG) for social sharing -->
+  <meta property="og:title" content="Burra Car & 4 X 4 - Mechanic Korumburra" />
+  <meta property="og:description"
+    content="Expert car and 4x4 servicing and repairs in Korumburra. Call (03) 5655 1288." />
+  <meta property="og:image" content="https://www.burracar4x4.com.au/graphics/workshop-alp-st.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.burracar4x4.com.au" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="default.css" />
+
+  <!-- Scripts -->
+  <script src="script.js" async defer></script>
+</head>
+
+<body class="outer">
+  <div class="container-background">
+    <div class="container">
+      <img class="header" src="./graphics/bc44_header_3.png" />
+      <img class="main_image_top" src="./graphics/workshop_alp_st.jpg" alt="Workshop on Alp st">
+      <span class="addr">1 Alp St, Korumburra</span>
+
+      <section class="services">
+        <span>Specialising in:</span>
+        <ul>
+          <li>
+            Servicing & repairs on all makes & models
+          </li>
+          <li>
+            Brake & clutch repairs
+          </li>
+          <li>
+            A/C re-gassing
+          </li>
+          <li>
+            Disc machining & fuel injector cleaning
+          </li>
+          <li>
+            4X4 Repairs & modifications
+          </li>
+          <li>
+            Towing
+          </li>
+          <li>
+            Trailer repairs
+          </li>
+          <li>
+            Auto electrical repairs
+          </li>
+          <li>
+            The latest diagnostic service tools
+          </li>
+          <li>
+            We use castrol oils & quality brand filters
+          </li>
+        </ul>
+      </section>
+
+      <div class="logos">
+        <img src="./graphics/logo_racv.png" />
+        <img src="./graphics/logo_vacc.png" />
+      </div>
+
+      <!-- Phone button and popup number -->
+      <button id="call_now_button" class="button">
+        Call Us Now
+      </button>
+      <a id="phone_number" class="phone_number hidden" href="tel:+61356551288">(03) 5655 1288</a>
+
+      <!-- Map button and modal -->
+      <button id="map_button" class="button">
+        Show Map
+      </button>
+
+      <div id="map_window" class="map_window hidden">
+        <div class="map_header">
+          <a class="map_header_button" href="https://goo.gl/maps/pk14Cf1NQA9S3LYFA" target="_blank">Full
+            Screen</a>
+          <button id="map_close_button" class="map_header_button">Close</button>
+        </div>
+        <iframe class="map_inner" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25004.613693171912!2d145.813188!3d-38.428146!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b2a1fcf1d6b87af%3A0x29f1cb23c7d8e55a!2s1%20Alp%20St%2C%20Korumburra%20VIC%203950!5e0!3m2!1sen!2sau!4v1673140962943!5m2!1sen!2sau"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <!-- Contact button and modal -->
+      <button id="contact_button" class="button">
+        Contact Us
+      </button>
+
+      <aside id='contact_window' class="contact_window hidden">
+        <div class='contact_window_inner'>
+          <span>Contact Us</span>
+          <form id="contact_us_form">
+            <div>
+              <label for="subject">Subject:</label>
+              <select id="subject" name='subject'>
+                <option value="" selected disabled hidden>-- Please Select --</option>
+                <option>Service</option>
+                <option>Emergency Repair</option>
+                <option>Towing</option>
+                <option>Trailer</option>
+                <option>Other</option>
+              </select>
+              <label for="make">Vehicle:</label>
+              <input placeholder="Make/model/year" id='make' name='make' />
+              <label for="customer_name">Name:</label>
+              <input name='customer_name' id="customer_name" required />
+              <label for="customer_contact">Contact Details:</label>
+              <input placeholder="Phone/email" id='customer_contact' name='customer_contact' required />
+              <label for="comments">Additional Comments:</label>
+              <textarea id="comments" name="comments" rows='6'></textarea>
+            </div>
+            <button class="contact_window_submit">Submit</button>
+          </form>
+        </div>
+
+        <button id="contact_close_button" class='contact_window_close' form="contact_us_form">
+        </button>
+      </aside>
+
+      <!-- Thank you modal -->
+      <aside id="thankyou" class="thankyou hidden">
+        <div class="thankyou_text">
+          <div style="font-size: 24px; text-decoration: underline;">Thankyou</div>
+          <br />
+          We will respond to your enquiry as soon as we can.<br />
+          <br />
+          <i>- Josh & Grant</i>
+          <br /><br />
+          <input id="thankyou_close_button" type='button' value='ok' />
+        </div>
+      </aside>
+
+      <a id="fuof" href="https://www.facebook.com/pages/Burra-Car-4X4/578325602189770" target="_blank">
+        <img src="./graphics/fuof_logo.png">
+      </a>
+
+      <img class='testimonials' src=" ./graphics/testimonial_1.png" />
+    </div>
+  </div>
+
+</body>
+
+</html>

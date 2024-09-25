@@ -1,0 +1,295 @@
+html {
+  --primary: #0d4762;
+  --secondary: #ffff00;
+  --tertiary: #5d97c2;
+  --shadow: rgba(0, 0, 0, 0.5);
+
+  --font-family-primary: tahoma, verdana, arial;
+  --font-family-secondary: arial, tahoma, verdana;
+
+  background: #024;
+}
+
+button,
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.outer {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1400px;
+  min-width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.container-background {
+  width: 1400px;
+  height: 1000px;
+  background-image: url("./graphics/outer_background_engine.png");
+}
+
+.container {
+  position: relative;
+  width: 1000px;
+  height: 800px;
+  margin: 20px auto;
+  background-image: url("./graphics/background_blue_3.png");
+  border: 2px solid var(--secondary);
+  border-radius: 40px;
+  box-shadow: 10px 10px 20px 10px var(--shadow);
+}
+
+.header {
+  position: absolute;
+  left: 40px;
+  top: 10px;
+  width: 920px;
+  height: 106px;
+}
+
+.main_image_top {
+  position: absolute;
+  left: 40px;
+  top: 126px;
+  width: 920px;
+  height: 272px;
+  border: 2px solid var(--secondary);
+}
+
+.addr {
+  position: absolute;
+  left: 720px;
+  top: 410px;
+  height: 28px;
+  font-family: var(--font-family-primary);
+  font-size: 20px;
+  color: var(--secondary);
+}
+
+.services {
+  position: absolute;
+  text-align: left;
+  left: 40px;
+  top: 420px;
+  font-family: var(--font-family-primary);
+  font-size: 20px;
+  color: var(--secondary);
+}
+
+.services > span {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.services > ul {
+  margin-top: 4px;
+}
+
+.services > ul > li::marker {
+  content: "- ";
+}
+
+.phone_number {
+  position: absolute;
+  text-decoration: none;
+  left: 445px;
+  top: 420px;
+  width: 210px;
+  font-family: var(--font-family-secondary);
+  font-size: 28px;
+  color: var(--secondary);
+  text-align: center;
+}
+
+#call_now_button {
+  top: 470px;
+}
+
+#map_button {
+  top: 530px;
+}
+
+#contact_button {
+  top: 590px;
+}
+
+.button {
+  position: absolute;
+  left: 470px;
+  width: 160px;
+  height: 40px;
+  background: var(--primary);
+  background-image: url("./graphics/button_background2.png");
+  border: 2px solid var(--secondary);
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 2px var(--shadow);
+  font-family: var(--font-family-secondary);
+  font-size: 24px;
+  color: var(--secondary);
+}
+.button:hover {
+  background: var(--tertiary);
+}
+
+#fuof {
+  position: absolute;
+  left: 470px;
+  top: 660px;
+  width: 168px;
+  height: 56px;
+}
+
+.testimonials {
+  position: absolute;
+  left: 650px;
+  top: 440px;
+  width: 318px;
+  height: 280px;
+}
+
+.phone {
+  position: absolute;
+  left: 480px;
+  top: 680px;
+  font-family: var(--font-family-secondary);
+  font-size: 32px;
+  color: var(--secondary);
+  visibility: hidden;
+}
+
+.contact_window {
+  position: absolute;
+  z-index: 2;
+  left: 290px;
+  top: 260px;
+  width: 600px;
+  height: 400px;
+  background-image: url("./graphics/contact_window_background2.png");
+}
+
+.contact_window_inner {
+  position: absolute;
+  text-align: left;
+  left: 50px;
+  top: 30px;
+  width: 420px;
+  height: 300px;
+  font-family: var(--font-family-secondary);
+  color: #ddd;
+}
+
+.contact_window_inner > span {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.contact_window_inner > form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.contact_window_inner > form > div {
+  display: grid;
+  grid-template-columns: 30% 50%;
+  gap: 4px;
+}
+
+.contact_window_inner > form > div > label {
+  padding-right: 8px;
+  text-align: right;
+}
+
+.contact_window_close {
+  position: absolute;
+  left: 430px;
+  top: 15px;
+  width: 40px;
+  height: 40px;
+  background-image: url("./graphics/contact_window_close2.png");
+  cursor: pointer;
+}
+
+.contact_window_submit {
+  all: revert;
+}
+
+.thankyou {
+  position: absolute;
+  z-index: 3;
+  left: 410px;
+  top: 340px;
+  width: 300px;
+  height: 240px;
+  background-image: url("./graphics/thankyou_background2.png");
+}
+
+.thankyou_text {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  width: 220px;
+  height: 200px;
+  font-family: var(--font-family-secondary);
+  color: #ddd;
+  text-align: center;
+  line-height: 22px;
+}
+
+.logos {
+  position: absolute;
+  left: 60px;
+  top: 730px;
+}
+.logos > img {
+  padding-right: 30px;
+}
+
+.map_window {
+  position: absolute;
+  z-index: 2;
+  left: 650px;
+  top: 440px;
+  width: 318px;
+  height: 280px;
+  border: 2px solid var(--secondary);
+}
+
+.map_header {
+  display: flex;
+  place-content: space-between;
+  height: 24px;
+  background: #00344f;
+  padding: 2px 10px;
+}
+
+.map_header_button {
+  display: flex;
+  align-content: center;
+  font-family: var(--font-family-secondary);
+  color: var(--secondary);
+}
+.map_header_button:hover {
+  text-decoration: underline;
+}
+
+iframe.map_inner {
+  position: absolute;
+  left: 0px;
+  top: 24px;
+  width: 318px;
+  height: 256px;
+}
