@@ -25,7 +25,8 @@
   <link rel="stylesheet" href="default.css" />
 
   <!-- Scripts -->
-  <script src="script.js" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body class="outer">
@@ -134,7 +135,7 @@
               <label for="honeypot" style="display: none;">Leave this field empty:</label>
               <input type="text" id="honeypot" name="honeypot" style="display: none;">
             </div>
-            <button form="contact_us_form" class="contact_window_submit">Submit</button>
+            <button id="contact_submit_button" form="contact_us_form" class="contact_window_submit">Submit</button>
           </form>
         </div>
       </aside>
