@@ -9,7 +9,7 @@ const handleEmailSubmission = async () => {
   try {
     contactSubmitButton.innerText = "Sending...";
     await emailjs.sendForm(
-      "service_burracar4x4",
+      "service_t4pcmhl",
       "template_fms1jmt",
       "contact_us_form",
     );
