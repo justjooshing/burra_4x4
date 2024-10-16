@@ -1,5 +1,4 @@
 const elementTriggerMap = {
-  call_now_button: [{ element: "phone_number" }],
   map_button: [
     { element: "map_window" },
     { element: "contact_window", directive: "hide" },
@@ -20,7 +19,7 @@ const elementTriggerMap = {
 };
 
 /**
- * @param elementName contact_window | thankyou | map_window | phone_number
+ * @param elementName contact_window | thankyou | map_window
  * @optional @param directive hide | show
  */
 const toggleElementVisibility = (elementName, directive) => {

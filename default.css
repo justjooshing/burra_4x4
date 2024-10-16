@@ -124,17 +124,6 @@ a {
   width: 100%;
 }
 
-.phone_number {
-  position: absolute;
-  text-decoration: none;
-  top: -35px;
-  width: 210px;
-  font-family: var(--font-family-secondary);
-  font-size: 28px;
-  color: var(--secondary);
-  text-align: center;
-}
-
 .button_wrapper {
   display: flex;
   flex-direction: column;
