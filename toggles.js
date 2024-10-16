@@ -1,6 +1,9 @@
 const elementTriggerMap = {
   call_now_button: [{ element: "phone_number" }],
-  map_button: [{ element: "map_window" }],
+  map_button: [
+    { element: "map_window" },
+    { element: "contact_window", directive: "hide" },
+  ],
   map_close_button: [{ element: "map_window" }],
   contact_button: [
     { element: "contact_window" },
