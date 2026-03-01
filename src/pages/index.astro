@@ -1,0 +1,157 @@
+---
+import { Image, getImage } from 'astro:assets';
+import '../styles/default.css';
+import ServicesList from '../components/ServicesList.astro';
+import MapModal from '../components/MapModal.astro';
+import ContactModal from '../components/ContactModal.astro';
+
+import backgroundEngine from '../assets/graphics/outer_background_engine.png';
+import headerLogo from '../assets/graphics/bc44_header_3.png';
+import workshopPhoto from '../assets/graphics/workshop_alp_st.jpg';
+import racvLogo from '../assets/graphics/logo_racv.png';
+import vaccLogo from '../assets/graphics/logo_vacc.png';
+import facebookLogo from '../assets/graphics/fuof_logo.png';
+import testimonialImage from '../assets/graphics/testimonial_1.png';
+
+const ogImage = await getImage({ src: workshopPhoto, format: 'jpeg', width: 1200 });
+
+const services = [
+  'Servicing & repairs on all makes & models',
+  'Brake & clutch repairs',
+  'A/C re-gassing',
+  'Disc machining & fuel injector cleaning',
+  '4X4 Repairs & modifications',
+  'Roadworthies',
+  'Towing',
+  'Trailer repairs',
+  'Auto electrical repairs',
+  'The latest diagnostic service tools',
+  'We use Castrol oils & quality brand filters',
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <title>Mechanic Korumburra - Burra Car & 4 X 4</title>
+    <!-- Preconnect to third-party origins -->
+    <link rel="preconnect" href="https://maps.googleapis.com" />
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.emailjs.com" />
+
+    <!-- SEO -->
+    <meta name="description" content="Burra Car & 4 X 4. We provide servicing and repairs on all vehicle makes and models. Call us on (03) 5655 1288." />
+    <meta name="keywords" content="burra, car, 4 x 4, mechanic, josh, grant, vehicle, service, repair, all models, brake, clutch, a/c, disc, machining, modification, towing, trailers, auto electrical, quality oil, filters, korumburra, victoria, south gippsland, racv" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (OG) for social sharing -->
+    <meta property="og:title" content="Burra Car & 4 X 4 - Mechanic Korumburra" />
+    <meta property="og:description" content="Expert car and 4x4 servicing and repairs in Korumburra. Call (03) 5655 1288." />
+    <meta property="og:image" content={`https://www.burracar4x4.com.au${ogImage.src}`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.burracar4x4.com.au" />
+  </head>
+
+  <body>
+    <div class="bg-image">
+      <Image src={backgroundEngine} alt="" loading="eager" format="webp" />
+    </div>
+    <div class="container">
+      <div class="header">
+        <Image src={headerLogo} alt="Burra Car & 4X4" loading="eager" format="webp" />
+        <Image class="main_image_top" src={workshopPhoto} alt="Our workshop on Alp St" loading="eager" format="webp" />
+      </div>
+      <div class="grid">
+        <div class="grid-area-a">
+          <ServicesList {services} />
+          <div class="logos">
+            <Image src={racvLogo} alt="RACV approved" loading="lazy" format="webp" />
+            <Image src={vaccLogo} alt="VACC member" loading="lazy" format="webp" />
+          </div>
+        </div>
+
+        <div class="grid-area-b">
+          <div class="button_wrapper">
+            <div class="modal_container">
+              <a href="tel:+61356551288" class="button modal_container">
+                Call Us Now
+              </a>
+            </div>
+            <MapModal />
+            <ContactModal />
+          </div>
+
+          <a href="https://www.facebook.com/pages/Burra-Car-4X4/578325602189770" target="_blank">
+            <Image src={facebookLogo} alt="Find us on Facebook" loading="lazy" format="webp" />
+          </a>
+        </div>
+
+        <div class="grid-area-c">
+          <span class="addr">1 Alp St, Korumburra</span>
+          <Image class="testimonials" src={testimonialImage} alt="Customer testimonials" width={318} loading="lazy" format="webp" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Toggle visibility — data attributes on buttons declare the behaviour,
+      // a single delegated listener handles everything.
+      const toggleElementVisibility = (id: string, directive?: string) => {
+        const el = document.getElementById(id)!;
+        const isHidden = el.classList.contains('hidden');
+        const method = directive
+          ? directive === 'show' ? 'remove' : 'add'
+          : isHidden ? 'remove' : 'add';
+        el.classList[method]('hidden');
+      };
+
+      document.addEventListener('click', (e: MouseEvent) => {
+        const btn = (e.target as Element).closest<HTMLElement>('[data-toggle],[data-hide],[data-show]');
+        if (!btn) return;
+        btn.dataset.toggle?.split(' ').forEach(id => toggleElementVisibility(id));
+        btn.dataset.hide?.split(' ').forEach(id => toggleElementVisibility(id, 'hide'));
+        btn.dataset.show?.split(' ').forEach(id => toggleElementVisibility(id, 'show'));
+      });
+
+      // Email form logic — lazy-loaded when the contact modal is first opened
+      document.getElementById('contact_button')!.addEventListener('click', async () => {
+        const { default: emailjs } = await import('@emailjs/browser');
+        emailjs.init('GzVIhjxHJvn0KjhhO');
+
+        const contactUsForm = document.getElementById('contact_us_form') as HTMLFormElement;
+        const contactSubmitButton = document.getElementById('contact_submit_button') as HTMLButtonElement;
+        const formSubmissionError = document.getElementById('form_submission_error')!;
+
+        const handleEmailSubmission = async () => {
+          formSubmissionError.classList.add('hidden');
+          try {
+            contactSubmitButton.innerText = 'Sending...';
+            await emailjs.sendForm('service_t4pcmhl', 'template_fms1jmt', 'contact_us_form');
+            toggleElementVisibility('thankyou');
+            contactSubmitButton.innerText = 'Sent';
+            contactUsForm.reset();
+          } catch (err) {
+            console.error(err);
+            formSubmissionError.classList.remove('hidden');
+          } finally {
+            contactSubmitButton.innerText = 'Submit';
+          }
+        };
+
+        contactUsForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          if (contactSubmitButton.innerText === 'Sending...') return;
+
+          const honeypot = (document.getElementById('honeypot') as HTMLInputElement).value;
+          if (honeypot) {
+            alert('Spam detected! Your submission cannot be processed.');
+          } else {
+            handleEmailSubmission();
+          }
+        });
+      }, { once: true });
+    </script>
+  </body>
+</html>

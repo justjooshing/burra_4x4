@@ -1,0 +1,13 @@
+---
+interface Props {
+  services: string[];
+}
+const { services } = Astro.props;
+---
+
+<section class="services">
+  <span>Specialising in:</span>
+  <ul>
+    {services.map((service) => <li>{service}</li>)}
+  </ul>
+</section>

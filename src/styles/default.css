@@ -1,0 +1,362 @@
+html {
+  --primary: #0d4762;
+  --secondary: #ffff00;
+  --tertiary: #5d97c2;
+  --rich: #173e9f;
+  --shadow: rgba(0, 0, 0, 0.5);
+
+  --font-family-primary: tahoma, verdana, arial;
+  --font-family-secondary: arial, tahoma, verdana;
+  background: #024;
+}
+
+@media (width < 768px) {
+  html {
+    overflow-x: hidden;
+  }
+}
+
+button,
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bg-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  margin: 20px auto;
+  background: radial-gradient(
+    circle at center,
+    var(--tertiary) 0%,
+    var(--rich) 100%
+  );
+  border: 2px solid var(--secondary);
+  border-radius: 40px;
+  box-shadow: 10px 10px 20px 10px var(--shadow);
+  max-width: 1000px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 0 40px;
+  }
+}
+
+.main_image_top {
+  border: 2px solid var(--secondary);
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  padding: 20px 10px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    padding: 20px 40px;
+    grid-template-columns: repeat(2, auto) 1fr;
+  }
+}
+
+.grid-area-b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  gap: 20px;
+}
+
+.grid-area-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services {
+  font-family: var(--font-family-primary);
+  font-size: 20px;
+  color: var(--secondary);
+}
+
+.services > span {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.services > ul {
+  margin-top: 4px;
+}
+
+.services > ul > li::marker {
+  content: "- ";
+}
+
+.logos {
+  padding-left: 20px;
+}
+.logos > img {
+  padding-right: 30px;
+}
+
+.modal_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.button_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  position: relative;
+  text-align: center;
+  margin: 8px 0;
+  padding: 7px;
+  width: 100%;
+  background: linear-gradient(to right, #032b8d 30%, #455bba 50%, #032b8d 70%);
+  border: 2px solid var(--secondary);
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 2px var(--shadow);
+  font-family: var(--font-family-secondary);
+  font-size: 24px;
+  color: var(--secondary);
+}
+.button:hover {
+  background: var(--tertiary);
+}
+
+.map_window {
+  z-index: 2;
+  top: -100%;
+  border: 2px solid var(--secondary);
+}
+
+@media (min-width: 768px) {
+  .map_window {
+    left: 200px;
+  }
+}
+
+.map_header {
+  display: flex;
+  place-content: space-between;
+  height: 24px;
+  background: var(--primary);
+  padding: 2px 10px;
+}
+
+.map_header_button {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family-secondary);
+  color: var(--secondary);
+}
+.map_header_button:hover {
+  text-decoration: underline;
+}
+
+.map_window iframe {
+  display: flex;
+  border: none;
+  width: 318px;
+  height: 256px;
+}
+
+.contact_window {
+  z-index: 2;
+  border: 2px solid var(--secondary);
+  border-radius: 20px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 0 1fr 50px;
+}
+
+@media (min-width: 768px) {
+  .contact_window {
+    grid-template-columns: 50px 1fr 50px;
+  }
+}
+
+.contact_window_inner {
+  grid-column-start: 2;
+  padding-top: 15px;
+  text-align: left;
+  font-family: var(--font-family-secondary);
+  color: #ddd;
+}
+
+.contact_window_inner > span {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.contact_window_inner > form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+  align-items: center;
+}
+
+.contact_window_inner > form > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+}
+
+.contact_window_inner > form > div > label {
+  padding-right: 8px;
+  text-align: right;
+}
+
+.contact_window_close {
+  grid-column-start: 3;
+  justify-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  aspect-ratio: 1;
+  background-color: var(--primary);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.contact_window_close:hover {
+  background-color: var(--tertiary);
+  cursor: pointer;
+}
+
+.close {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 60%;
+}
+
+.close:before,
+.close:after {
+  position: absolute;
+  content: " ";
+  height: 100%;
+  width: 4px;
+  background-color: var(--secondary);
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.contact_window_submit {
+  all: revert;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.form_error {
+  color: #ff6b6b;
+  font-family: var(--font-family-secondary);
+  font-size: 14px;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.thankyou {
+  z-index: 3;
+  display: flex;
+  border: 2px solid var(--secondary);
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 220px;
+  height: 200px;
+  font-family: var(--font-family-primary);
+  color: #ddd;
+  text-align: center;
+  line-height: 22px;
+  padding: 8px 0 16px;
+}
+
+.thankyou button {
+  all: revert;
+  cursor: pointer;
+}
+
+.thankyou_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+}
+
+.thankyou_text header > span {
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+.addr {
+  height: 28px;
+  font-family: var(--font-family-primary);
+  font-size: 20px;
+  color: var(--secondary);
+  text-align: center;
+}
+
+.testimonials {
+  max-width: 100%;
+  height: auto;
+  padding-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .testimonials {
+    width: 318px;
+    height: 280px;
+    max-width: unset;
+  }
+}
+
+.modal {
+  background: linear-gradient(to bottom right, #0b16e8, #080fa6);
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}

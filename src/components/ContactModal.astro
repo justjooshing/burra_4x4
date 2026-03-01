@@ -1,0 +1,58 @@
+---
+---
+
+<div class="modal_container">
+  <button id="contact_button" data-toggle="contact_window" data-hide="map_window" class="button">Contact Us</button>
+  <aside id="contact_window" class="contact_window hidden modal">
+    <div class="contact_window_inner">
+      <span>Contact Us</span>
+      <form id="contact_us_form">
+        <div>
+          <label for="subject">Subject:</label>
+          <select id="subject" name="subject">
+            <option value="" selected disabled hidden>-- Please Select --</option>
+            <option>Service</option>
+            <option>Emergency Repair</option>
+            <option>Roadworthy</option>
+            <option>Towing</option>
+            <option>Trailer</option>
+            <option>Other</option>
+          </select>
+          <label for="make">Vehicle:</label>
+          <input placeholder="Make/model/year" id="make" name="make" />
+          <label for="customer_name">Name:</label>
+          <input name="customer_name" id="customer_name" required />
+          <label for="customer_phone">Phone:</label>
+          <input placeholder="Phone number" id="customer_phone" name="customer_phone" required type="number" />
+          <label for="customer_email">Email:</label>
+          <input placeholder="Email address" id="customer_email" name="customer_email" type="email" />
+          <label for="comments">Additional Comments:</label>
+          <textarea id="comments" name="comments" rows="6"></textarea>
+
+          <!-- Honeypot for botspam -->
+          <label for="honeypot" style="display: none;">Leave this field empty:</label>
+          <input type="text" id="honeypot" name="honeypot" style="display: none;" />
+        </div>
+        <button id="contact_submit_button" form="contact_us_form" class="contact_window_submit">Submit</button>
+        <p id="form_submission_error" class="form_error hidden">
+          Something went wrong — please try again or call us on (03) 5655 1288.
+        </p>
+      </form>
+    </div>
+    <button data-hide="contact_window thankyou" class="contact_window_close" type="button" aria-label="Close">
+      <span aria-hidden="true" class="close"></span>
+    </button>
+  </aside>
+
+  <!-- Thank you modal -->
+  <aside id="thankyou" class="thankyou hidden modal">
+    <div class="thankyou_text">
+      <header>
+        <span>Thankyou</span>
+      </header>
+      We will respond to your enquiry as soon as we can.<br />
+      <i>- Josh & Grant</i>
+    </div>
+    <button data-hide="thankyou contact_window" type="button">Ok</button>
+  </aside>
+</div>
