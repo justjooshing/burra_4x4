@@ -7,7 +7,7 @@ import ContactModal from '../components/ContactModal.astro';
 
 import backgroundEngine from '../assets/graphics/outer_background_engine.png';
 import headerLogo from '../assets/graphics/bc44_header_3.png';
-import workshopPhoto from '../assets/graphics/workshop_alp_st.jpg';
+import workshopPhoto from '../assets/graphics/workshop_2.jpg';
 import racvLogo from '../assets/graphics/logo_racv.png';
 import vaccLogo from '../assets/graphics/logo_vacc.png';
 import facebookLogo from '../assets/graphics/fuof_logo.png';
@@ -16,13 +16,13 @@ import testimonialImage from '../assets/graphics/testimonial_1.png';
 const ogImage = await getImage({ src: workshopPhoto, format: 'jpeg', width: 1200 });
 
 const services = [
-  'Servicing & repairs on all makes & models',
-  'Brake & clutch repairs',
-  'A/C re-gassing',
-  'Disc machining & fuel injector cleaning',
-  '4X4 Repairs & modifications',
-  'Roadworthies',
+  'Log book servicing & repairs on all makes & models',
+  'Wheel alignments',
+  'Road worthies',
   'Towing',
+  'Brake & clutch repairs',
+  'A/C repairs',
+  '4X4 repairs & modifications',
   'Trailer repairs',
   'Auto electrical repairs',
   'The latest diagnostic service tools',
@@ -61,7 +61,7 @@ const services = [
     <div class="container">
       <div class="header">
         <Image src={headerLogo} alt="Burra Car & 4X4" loading="eager" format="webp" />
-        <Image class="main_image_top" src={workshopPhoto} alt="Our workshop on Alp St" loading="eager" format="webp" />
+        <Image class="main_image_top" src={workshopPhoto} alt="Our workshop on Alp St" loading="eager" format="webp" width={970} />
       </div>
       <div class="grid">
         <div class="grid-area-a">

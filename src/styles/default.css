@@ -66,6 +66,8 @@ img {
 
 .main_image_top {
   border: 2px solid var(--secondary);
+  height: clamp(140px, 35vw, 272px);
+  object-fit: cover;
 }
 
 .grid {
